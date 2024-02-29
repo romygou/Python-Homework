@@ -32,11 +32,9 @@ class PageRankDiGraph(object):
         Returns:
             List of string (list of all nodes in the graph)
         '''
-        # I'm giving it to you - no need to change or understand
         sung_to = reduce(lambda x, y: x+y, self.link_dict.values())
         singer = list(self.link_dict.keys())
-        
-        # easy trick to turn a list with duplicates items into list without duplicate items 
+
         return list(set(sung_to + singer))
 
     def __contains__(self, item):
@@ -67,7 +65,6 @@ class PageRankDiGraph(object):
         Returns:
             new instance of PageRankDiGraph that contains both the edges of this instance and other
         '''
-        # hint: should be one line
         return self + other
 
     def linked_by(self, x):
